@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'DM sans', sans-serif;
+      max-width: 1400px;
+}
+
+header {
+      display: flex;
+      justify-content: center;
+      padding: 42px 0 17px 0;
+}
+
+header .logo{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+header .logo h2{
+      color: #D04F4F;
+}
+
+.chercherBar{
+      width: 100%;
+      padding: 0 100px;
+      position: relative;
+}
+
+#chercher{
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.02);
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+
+}
+
+.chercheBar1 i{
+      position: absolute;
+      top: 12px;
+      right: 115px;
+      color: #000000;
+      cursor: pointer;
+}
+
+/* style de message d'erreur */
+
+#nomatch {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      width: 100%;
+    }
+    #nomatch img {
+      padding: 20px;
+      width: 50%;
+      max-width: 250px;
+      fill: gray;
+    }
+    #nomatch p {
+      color: gray;
+      text-align: center;
+    }
+    
+
+
+.filters {
+      display: flex;
+      justify-content: flex-start;
+      padding: 15px 100px;
+}
+
+.filters .ingredient,
+.filters .appareils,
+.filters .ustensiles {
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+      margin: 5px;
+}    
+
+#ingredients-btn, #ingredients-list {
+      background-color: #3282F7;
+}
+
+#appareils-btn, #appareils-list {
+      background-color: #68d9a4;
+}
+
+#ustensiles-btn, #ustensils-list {
+      background-color: #ED6454;
+}
+
+.ingredient-box, .appareils-box, .ustensiles-box {
+      margin-right: 1rem;
+}
+
+#ingredients-list::-webkit-scrollbar {
+      background-color: #3282f7;
+    }
+
+/* Styles des filtres: couleur + format */    
+
+.tag-btn {
+      border-color: transparent;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 8.25rem;
+      padding: 0.75rem;
+      border-radius: 0.25rem;
+      color: #fff;
+      font-weight: 600;
+}
+
+.search-tag {
+      width: 40rem;
+      overflow: hidden;
+      display: none;
+      border: none;
+      outline: none;
+      background-color: transparent;
+}
+
+/* Styles des plats*/
+
+#plats {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-flow: row wrap;
+      padding: 0 100px;
+}
+
+#plats .single-plat {
+      width: 31%;
+      max-width: 400px;
+      border-radius: 10px;
+      background-color: #C7BEBE;
+      overflow: hidden;
+      margin: 30px 0px;
+}
+
+#plats .single-plat .plat-image {
+      width: 100%;
+      height: 200px;
+}
+
+
+#plats .single-plat .plat-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      padding-bottom: 20px;
+      background-color: #E7E7E7;
+      height: 250px;
+}
+
+.plat-header {
+      display: flex;
+      align-items: first baseline;
+      justify-content: space-between;
+      padding: 10px;
+}
+
+.plat-header .time {
+      min-width: 80px;
+      font-size: 14px;
+      font-family: 'Lato', sans-serif;
+      text-align: right;
+}
+
+.plat-body {
+      height: 150px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+}
+
+.plat-body .ingredients {
+      padding-left: 10px;
+      width: 50%;
+      min-width: 160px;
+}
+
+.plat-body .ingredients li {
+      list-style: none;
+      font-family: 'Lato', sans-serif;
+}
+
+.plat-body .description span {
+      overflow: hidden;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 9;
+      -webkit-box-orient: vertical;
+      font-family: 'Lato', sans-serif;
+      word-wrap: break-word;
+      font-size: 13px;
+      padding: 0 10px;
+}
+
+/*Estilos de elemoentos de los filtros*/
+.tags-list {
+      position: absolute;
+      overflow: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 40rem;
+      max-height: 15.8rem;
+      margin-top: 0.1rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      z-index: 1;
+      display: none;
+    }
+
+    .ingredients-option,
+    .appareils-option,
+    .ustensils-option {
+      width: 30%;
+      color: #fff;
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.7rem;
+    }
+    
+    .ingredients-option:hover,
+    .appareils-option:hover,
+    .ustensils-option:hover,
+    .ingredients-option:focus,
+    .appareils-option:focus,
+    .ustensils-option:focus {
+      color: #fff;
+      opacity: 65%;
+    }
+    .ingredients-option:hover .ingredients-option,
+    .ingredients-option:hover .appareils-option,
+    .ingredients-option:hover .ustensils-option,
+    .appareils-option:hover .ingredients-option,
+    .appareils-option:hover .appareils-option,
+    .appareils-option:hover .ustensils-option,
+    .ustensils-option:hover .ingredients-option,
+    .ustensils-option:hover .appareils-option,
+    .ustensils-option:hover .ustensils-option,
+    .ingredients-option:focus .ingredients-option,
+    .ingredients-option:focus .appareils-option,
+    .ingredients-option:focus .ustensils-option,
+    .appareils-option:focus .ingredients-option,
+    .appareils-option:focus .appareils-option,
+    .appareils-option:focus .ustensils-option,
+    .ustensils-option:focus .ingredients-option,
+    .ustensils-option:focus .appareils-option,
+    .ustensils-option:focus .ustensils-option {
+      width: 30%;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    
+.tag-arrow {
+      margin-top: 3px;
+      transition: all 0.5s;
+      cursor: pointer;
+    }
+
+.open .tag-arrow {
+      transform: rotateX(180deg);
+    }
+.open .tag-btn {
+      width: 40rem;
+      border-radius: 0.25rem;
+    }
+
+    /* style des éléments sélectionnés avec le clic */
+    
+    #selected-filter {
+      padding: 10px 100px;
+    }
+    #selected-filter .ing, #selected-filter .app, #selected-filter .ute {
+      display: inline-block;
+      font-size: 0.7rem;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 0.25rem;
+      margin: 3px;
+    }
+    #selected-filter .ing .fa-circle-xmark, #selected-filter .app .fa-circle-xmark, #selected-filter .ute .fa-circle-xmark {
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+    #selected-filter .ing .fa-circle-xmark:hover, #selected-filter .app .fa-circle-xmark:hover, #selected-filter .ute .fa-circle-xmark:hover {
+      color: #977571;
+    }
+    #selected-filter .ing {
+      background-color: #3282F7;
+    }
+    #selected-filter .app {
+      background-color: #68d9a4;
+    }
+    #selected-filter .ute {
+      background-color: #ed6454;
+    }
+    
